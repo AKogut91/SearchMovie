@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import RxSwift
+import RxDataSources
 
-class SearchMovieViewController: UIViewController {
+class SearchMovieViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: SearchMovieViewModel!
-    
+    private var viewModel: SearchMovieViewModel!
+    var viewModelBuilder: SearchMoviePresenter.ViewModelBuilder!
+     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
