@@ -15,11 +15,15 @@ class SearchMovieViewController: UIViewController, Storyboarded {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    private var viewModel: SearchMovieViewModel!
+    private var viewModel: SearchMoviePresenter!
     var viewModelBuilder: SearchMoviePresenter.ViewModelBuilder!
      
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel = viewModelBuilder((
+            searchBar.rx.text.orEmpty.asDriver(),()
+        )) 
     }
 }
 

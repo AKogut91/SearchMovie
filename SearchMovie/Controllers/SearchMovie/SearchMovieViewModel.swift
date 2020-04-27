@@ -8,6 +8,7 @@
 
 import Foundation
 import RxCocoa
+import RxSwift
 
 protocol SearchMoviePresenter: class {
     typealias Input = (
@@ -25,9 +26,14 @@ class SearchMovieViewModel: SearchMoviePresenter {
     var input: SearchMoviePresenter.Input
     var output: SearchMoviePresenter.Output
     
-    init(input: SearchMoviePresenter.Input) {
+    private let searchMovieService: SearchMovideAPI
+    private let bag = DisposeBag()
+    
+    init(input: SearchMoviePresenter.Input, searchMovieService: SearchMovideAPI) {
+        Logger.Log()
         self.input = input
         self.output = SearchMovieViewModel.output(input: self.input)
+        self.searchMovieService = searchMovieService
     }
 }
 
@@ -36,5 +42,4 @@ private extension SearchMovieViewModel {
     static func output(input: SearchMoviePresenter.Input) -> SearchMoviePresenter.Output {
         return()
     }
-    
 }

@@ -18,8 +18,10 @@ class SearchMovieCoordinator: BaseCoordinator {
     
     override func start() {
         let view = SearchMovieViewController.instantiate()
+
         view.viewModelBuilder = {
-            SearchMovieViewModel.init(input: $0)
+            SearchMovieViewModel.init(input: $0,
+                                      searchMovieService: SearchMovieService.shated)
         }
         navigationController.pushViewController(view, animated: true)
     }
