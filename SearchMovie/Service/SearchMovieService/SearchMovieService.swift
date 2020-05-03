@@ -25,10 +25,9 @@ extension SearchMovieService: SearchMovideAPI {
                     .request(usingHttpService: httpService)
                     .responseJSON { (result) in
                         guard let data = result.data else { return }
-                        Logger.Log("data -> \(data.count)")
+                        Logger.Log("data count -> \(data.count)")
                         do {
                             let movie = try JSONDecoder().decode(MovieModel.self, from: data)
-                            Logger.Log("movie = \(movie)")
                             single(.success(movie))
                         } catch let error as NSError {
                             Logger.Log("error = \(error.localizedDescription)")

@@ -10,36 +10,31 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-protocol SearchMoviePresenter: class {
-    typealias Input = (
-        searchText: Driver<String>, ()
-    )
-    typealias Output = ()
-    typealias ViewModelBuilder = (SearchMoviePresenter.Input) -> SearchMoviePresenter
+class SearchMovieViewModel {
     
-    var input: SearchMoviePresenter.Input {get}
-    var output: SearchMoviePresenter.Output {get}
-}
+    fileprivate let searchMovieService: SearchMovideAPI
+    fileprivate let searchAction:Driver<String>
 
-class SearchMovieViewModel: SearchMoviePresenter {
+    let navigationTitle: Driver<String>
+    var searchResult = Observable<MovieModel>.empty()
+    var movie = PublishRelay<[Search]>.init()
     
-    var input: SearchMoviePresenter.Input
-    var output: SearchMoviePresenter.Output
-    
-    private let searchMovieService: SearchMovideAPI
     private let bag = DisposeBag()
     
-    init(input: SearchMoviePresenter.Input, searchMovieService: SearchMovideAPI) {
-        Logger.Log()
-        self.input = input
-        self.output = SearchMovieViewModel.output(input: self.input)
-        self.searchMovieService = searchMovieService
+    init(searchAction:Driver<String>) {
+        self.searchAction = searchAction
+        self.searchMovieService = SearchMovieService()
+        self.navigationTitle = Driver.just("Movie Search")
+        
+        searchAction
+            .drive(onNext: { [weak self] result in
+                self?.searchMovieService.fetch(movie: result).subscribe(onSuccess: { (movie) in
+                    self!.movie.accept(movie.search ?? [Search]())
+                }) { (err) in
+                    Logger.Log("err -> \(err.localizedDescription)")
+                }
+                
+            }).disposed(by: bag)
     }
 }
 
-private extension SearchMovieViewModel {
-    
-    static func output(input: SearchMoviePresenter.Input) -> SearchMoviePresenter.Output {
-        return()
-    }
-}

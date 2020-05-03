@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1124592F244FA3860004FCF6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1124592E244FA3860004FCF6 /* AppCoordinator.swift */; };
+		1145278F245F2F7F0083B08B /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145278D245F2F7F0083B08B /* MovieTableViewCell.swift */; };
+		11452790245F2F7F0083B08B /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1145278E245F2F7F0083B08B /* MovieTableViewCell.xib */; };
 		11463DB32447063B0057F498 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11463DB22447063B0057F498 /* Coordinator.swift */; };
 		11463DB6244706AC0057F498 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11463DB5244706AC0057F498 /* Logger.swift */; };
 		11463DB82447073E0057F498 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11463DB72447073E0057F498 /* BaseCoordinator.swift */; };
 		11463DBD244707940057F498 /* SearchMovieCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11463DBC244707940057F498 /* SearchMovieCoordinator.swift */; };
 		11463DC2244708200057F498 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11463DC1244708200057F498 /* Storyboarded.swift */; };
+		114C5263245E1891008ECE7E /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C5262245E1891008ECE7E /* UIViewController+.swift */; };
+		114C5265245E189C008ECE7E /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114C5264245E189C008ECE7E /* UITableView+.swift */; };
 		117A19A524520EC100F50457 /* HttpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A19A424520EC100F50457 /* HttpRouter.swift */; };
 		117A19A92452101500F50457 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A19A82452101500F50457 /* HttpService.swift */; };
 		117A19AD2452111100F50457 /* RequesterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117A19AC2452111100F50457 /* RequesterService.swift */; };
@@ -32,11 +36,15 @@
 
 /* Begin PBXFileReference section */
 		1124592E244FA3860004FCF6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		1145278D245F2F7F0083B08B /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		1145278E245F2F7F0083B08B /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		11463DB22447063B0057F498 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		11463DB5244706AC0057F498 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		11463DB72447073E0057F498 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		11463DBC244707940057F498 /* SearchMovieCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieCoordinator.swift; sourceTree = "<group>"; };
 		11463DC1244708200057F498 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		114C5262245E1891008ECE7E /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		114C5264245E189C008ECE7E /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		117A19A424520EC100F50457 /* HttpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRouter.swift; sourceTree = "<group>"; };
 		117A19A82452101500F50457 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		117A19AC2452111100F50457 /* RequesterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequesterService.swift; sourceTree = "<group>"; };
@@ -70,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1145278C245F2F6B0083B08B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1145278D245F2F7F0083B08B /* MovieTableViewCell.swift */,
+				1145278E245F2F7F0083B08B /* MovieTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		11463DB4244706A30057F498 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +120,15 @@
 				11463DC1244708200057F498 /* Storyboarded.swift */,
 			);
 			path = Storyboarded;
+			sourceTree = "<group>";
+		};
+		114C5261245E1862008ECE7E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				114C5262245E1891008ECE7E /* UIViewController+.swift */,
+				114C5264245E189C008ECE7E /* UITableView+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		117A19A624520EC400F50457 /* Network */ = {
@@ -173,6 +199,7 @@
 		11EE84472446F2A2000B3158 /* SearchMovie */ = {
 			isa = PBXGroup;
 			children = (
+				114C5261245E1862008ECE7E /* Extension */,
 				117A19B52452183700F50457 /* Model */,
 				11463DBA244707670057F498 /* System */,
 				11463DB4244706A30057F498 /* Service */,
@@ -189,6 +216,7 @@
 		11EE845C2446F858000B3158 /* SearchMovie */ = {
 			isa = PBXGroup;
 			children = (
+				1145278C245F2F6B0083B08B /* Cell */,
 				11EE844C2446F2A2000B3158 /* SearchMovieViewController.swift */,
 				11EE845D2446F86F000B3158 /* SearchMovieViewModel.swift */,
 				11463DBC244707940057F498 /* SearchMovieCoordinator.swift */,
@@ -275,6 +303,7 @@
 			files = (
 				11EE84552446F2A3000B3158 /* LaunchScreen.storyboard in Resources */,
 				11EE84522446F2A3000B3158 /* Assets.xcassets in Resources */,
+				11452790245F2F7F0083B08B /* MovieTableViewCell.xib in Resources */,
 				11EE84502446F2A2000B3158 /* SearchMovieViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,10 +367,13 @@
 				11EE844B2446F2A2000B3158 /* SceneDelegate.swift in Sources */,
 				11463DB6244706AC0057F498 /* Logger.swift in Sources */,
 				11463DC2244708200057F498 /* Storyboarded.swift in Sources */,
+				1145278F245F2F7F0083B08B /* MovieTableViewCell.swift in Sources */,
 				11463DB82447073E0057F498 /* BaseCoordinator.swift in Sources */,
 				117A19B42452180C00F50457 /* SearchMovieService.swift in Sources */,
 				11463DB32447063B0057F498 /* Coordinator.swift in Sources */,
 				11EE845E2446F86F000B3158 /* SearchMovieViewModel.swift in Sources */,
+				114C5265245E189C008ECE7E /* UITableView+.swift in Sources */,
+				114C5263245E1891008ECE7E /* UIViewController+.swift in Sources */,
 				117A19AF245211D400F50457 /* SearchMovieHttpRouter.swift in Sources */,
 				117A19B2245217D600F50457 /* SearchMovideAPI.swift in Sources */,
 				117A19AD2452111100F50457 /* RequesterService.swift in Sources */,

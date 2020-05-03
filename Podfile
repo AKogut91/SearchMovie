@@ -11,5 +11,6 @@ target 'SearchMovie' do
 	pod 'RxDataSources'
 	pod 'RxRelay'
   pod 'Alamofire'
+  pod 'AlamofireImage'
 
 end
